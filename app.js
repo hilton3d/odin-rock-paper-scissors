@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 // get computer choice
 
 function getComputerChoice() {
@@ -25,6 +22,8 @@ function getHumanChoice() {
 // play the game for 5 rounds
 
 function playGame() {
+  let humanScore = 0;
+  let computerScore = 0;
   for (let i = 0; i < 5; i++) {
     function playRound(humanChoice, computerChoice) {
       if (humanChoice === computerChoice) {
