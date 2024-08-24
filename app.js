@@ -68,6 +68,13 @@ function playGame() {
 
     playRound(humanSelection, computerSelection);
   }
+  if (computerScore > humanScore) {
+    console.log("Game over! You lose!");
+  } else if (humanScore > computerScore) {
+    console.log("Game over! You win!");
+  } else if (humanScore === computerScore) {
+    console.log("Game over! It's still a draw!");
+  }
 }
 
 playGame();
