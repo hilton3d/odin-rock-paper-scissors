@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin Rock, Paper, Scissors</title>
-</head>
-<body>
-   <script src="app.js"></script>
-</body>
+    <style>
+      .game {
+        text-align: center;
+      }
+
+      .score {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .player-choice {
+        color: blue;
+      }
+
+      .computer-choice {
+        color: green;
+      }
+
+      .result-display, .five {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game">
+      <h1>Rock, Paper, Scissors</h1>
+      <h3>Whoever gets <span class="five">5</span> first wins</h3>
+      <div class="score">
+        <div class="player-score">
+          <h3>Player</h2>
+            <p class="player-count">0</p>
+        </div>
+         <div class="computer-score">
+          <h3>Computer</h2>
+            <p class="computer-count">0</p>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="game-results">
+        <h3>Computer Choice: <span class="computer-choice"></span></h3>
+        <h3>Player Choice: <span class="player-choice"></span></h3>
+        <h3>Result: <span class="result-display"></span></h3>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
