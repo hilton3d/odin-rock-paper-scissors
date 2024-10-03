@@ -106,20 +106,37 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
+// player selection function
 
+// in the following function, each button press triggers a game round, no matter 
+// which button's pressed: rock, paper, or scissors. each one is also logged as 
+// a player selection
 possibleChoices.forEach(function (possibleChoice) {
   possibleChoice.addEventListener("click", function (e) {
     playerChoice = e.target.className;
+
+    // capitalizing the first letter of each choice when "printed" in the result
+    // display area
+
     let capitalized =
       playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
     playerChoiceDisplay.textContent = capitalized;
+
+    // inside this main function, we call other functions so the rest of the
+    // game can go on with each button press
+
     generateComputerChoice();
     getResult();
     gameOver();
   });
 });
 
+// computer choice section / function
+
 function generateComputerChoice() {
+  // creating a mechanism that randomly generates 3 numbers, which each number
+  // corresponding to rock, paper, or scissors
+
   const randomNumber = Math.floor(Math.random() * 3) + 1;
   if (randomNumber === 1) {
     computerChoice = "rock";
@@ -130,6 +147,9 @@ function generateComputerChoice() {
   if (randomNumber === 3) {
     computerChoice = "scissors";
   }
+
+  // capitalizing the first letter of each computer choice and displaying it
+  // in the result area
   let capitalized =
     computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
   computerChoiceDisplay.textContent = capitalized;
@@ -161,11 +181,15 @@ function getResult() {
     computerScore++;
   }
 
+// displaying the computer and player scores in their respective areas on the page
+
   const playerCount = document.querySelector(".player-count");
   const computerCount = document.querySelector(".computer-count");
   playerCount.textContent = playerScore;
   computerCount.textContent = computerScore;
 }
+
+// function to remove buttons and display the winner after 5 rounds
 
 function gameOver() {
   const removeBtns = document.querySelector(".btns");
