@@ -90,18 +90,25 @@
 
 // new code with UI
 
+// variables to select the display areas
+
 const computerChoiceDisplay = document.querySelector(".computer-choice");
 const playerChoiceDisplay = document.querySelector(".player-choice");
 const resultDisplay = document.querySelector(".result-display");
+
+// - variable to select the buttons with the choices, rock, paper, scissors
 const possibleChoices = document.querySelectorAll("button");
+
+// variables to store game scores and text information
 let result;
 let playerChoice;
 let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
-possibleChoices.forEach((possibleChoice) =>
-  possibleChoice.addEventListener("click", (e) => {
+
+possibleChoices.forEach(function (possibleChoice) {
+  possibleChoice.addEventListener("click", function (e) {
     playerChoice = e.target.className;
     let capitalized =
       playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
@@ -109,8 +116,8 @@ possibleChoices.forEach((possibleChoice) =>
     generateComputerChoice();
     getResult();
     gameOver();
-  })
-);
+  });
+});
 
 function generateComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3) + 1;
